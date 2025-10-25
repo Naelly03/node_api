@@ -1,0 +1,26 @@
+{
+  "name": "node_api",
+  "version": "1.0.0",
+  "description": "node_api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test:migrate": "cross-env DATABASE_URL=\"file:./prisma/test.db\" npx prisma migrate deploy",
+    "test": "npm run test:migrate && cross-env DATABASE_URL=\"file:./prisma/test.db\" jest --runInBand --forceExit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.18.0",
+    "supertest": "^7.1.4"
+  }
+}
